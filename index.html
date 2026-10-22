@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dhara · Legal operating system</title>
+  <meta name="description" content="Interactive prototype of Dhara, a legal knowledge platform for Bangladesh. All legal content is fictional.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="app-header" id="app-header">
+    <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open module menu" aria-controls="sidebar" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+
+    <a class="brand" href="#/" aria-label="Dhara home">
+      <span class="brand-mark" aria-hidden="true">ধা</span>
+      <span class="brand-text">
+        <span class="brand-name">Dhara <span class="brand-bn">ধারা</span></span>
+        <span class="brand-sub">Legal operating system for Bangladesh</span>
+      </span>
+    </a>
+
+    <div class="header-controls">
+      <div class="role-field" id="role-field">
+        <label for="role-select">Viewing as</label>
+        <select id="role-select">
+          <option value="advocate">Advocate</option>
+          <option value="judge">Judge</option>
+          <option value="officer">Legal officer</option>
+          <option value="citizen">Citizen</option>
+        </select>
+      </div>
+
+      <button type="button" class="p1-toggle" id="p1-toggle" role="switch" aria-checked="false">
+        <span class="switch" aria-hidden="true"><span class="knob"></span></span>
+        <span class="p1-toggle-text">
+          <span class="p1-toggle-label">Show Phase 1 only</span>
+          <span class="p1-toggle-sub">What this grant funds</span>
+        </span>
+      </button>
+
+      <button type="button" class="btn demo-btn" id="tour-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg>
+        <span class="demo-long">Start demo</span><span class="demo-short">Demo</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="scopebar" id="scopebar" role="status" aria-live="polite">
+    <span class="pbadge p1">Phase 1 · Funded</span>
+    <span class="scopebar-text"><strong>What this grant delivers in six months:</strong> the full Bangladesh Code at provision level, bilingual, with dates on every version; cited research; the provision browser; free Bangla public search; open corpus and API, handed to the ICT Division.</span>
+    <span class="scopebar-cost">BDT 4,85,000 · 6 months</span>
+  </div>
+
+  <div class="demo-banner" role="note">
+    <span class="demo-tag">Demo</span>
+    The Act, sections, cases, dates and text shown here are fictional examples, not real law.
+  </div>
+
+  <div class="shell" id="shell">
+    <aside class="sidebar" id="sidebar" aria-label="Modules"></aside>
+    <div class="scrim" id="scrim" hidden></div>
+    <main id="main" tabindex="-1"></main>
+  </div>
+
+  <!-- Guided tour -->
+  <div class="tour-block" id="tour-block" hidden></div>
+  <div class="tour-spot" id="tour-spot" hidden></div>
+  <div class="tour-card" id="tour-card" role="dialog" aria-modal="true" aria-labelledby="tour-title" aria-describedby="tour-body" hidden>
+    <p class="tour-step" id="tour-step"></p>
+    <h2 class="tour-title" id="tour-title"></h2>
+    <div class="tour-body" id="tour-body"></div>
+    <div class="tour-actions">
+      <button type="button" class="btn ghost" id="tour-exit">Exit tour</button>
+      <span class="tour-nav">
+        <button type="button" class="btn" id="tour-back">Back</button>
+        <button type="button" class="btn primary" id="tour-next">Next</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="tip" id="tip" role="tooltip" hidden></div>
+  <div class="sr-only" id="live" aria-live="polite"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
